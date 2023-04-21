@@ -1,117 +1,122 @@
 html {
-    box-sizing: border-box;
-    font-size: 14px;
-    font-family: sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue';
-    scroll-behavior: smooth;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue";
+  scroll-behavior: smooth;
 }
 
-*, *::before, *::after {
-    box-sizing: inherit;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 //APP
 
 .main-container {
-    padding: 1rem 0rem;
-    background-color: #1d1531;
-    color: #ffffff;
+  padding: 1rem 0rem;
+  background-color: #1d1531;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  max-width: auto;
+
+  h1 {
+    color: #a683ff;
+    margin: 0;
+    padding: 2rem 0rem;
+  }
+
+  .search {
+    min-width: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
-    min-height: 100vh;
-    max-width: auto;
+    justify-content: center;
+    gap: 1rem;
 
-    h1 {
-        color: #a683ff;
-        margin: 0;
-        padding: 2rem 0rem;
+    label {
+      color: #a683ff;
     }
 
-    .search {
-        min-width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
+    input[type="text"] {
+      background-color: #1d1531;
+      border: 1px solid #ffee00;
+      padding: 1rem;
+      margin: 1rem;
+      border-radius: 1rem;
+      min-width: 50%;
+      color: #ffee00;
 
-        label {
-            color: #a683ff;
-        }
-
-        input[type=text] {
-            background-color: #1d1531;
-            border: 1px solid #ffee00;
-            padding: 1rem;
-            margin: 1rem;
-            border-radius: 1rem;
-            min-width: 50%;
-            color: #ffee00;
-
-            &::placeholder {
-                color: #7d7500;
-            }
-        }
-
-        button {
-            padding: 1rem;
-            border-radius: 1rem;
-            border: none;
-            cursor: pointer;
-            background-color: #ffee00;
-            color: #1d1531;
-            font-weight: 700;
-            min-width: 10%;
-            transition: all 200ms ease-in-out;
-
-            &:hover {
-                background-color: #fff371;
-            }
-        }
+      &::placeholder {
+        color: #7d7500;
+      }
     }
 
-    
+    button {
+      padding: 1rem;
+      border-radius: 1rem;
+      border: none;
+      cursor: pointer;
+      background-color: #ffee00;
+      color: #1d1531;
+      font-weight: 700;
+      min-width: 10%;
+      transition: all 200ms ease-in-out;
 
-    .movies-container {
-        width: 95%;
-        margin: 2rem 0rem;
-        padding: 0rem 1rem;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 2rem;
+      &:hover {
+        background-color: #fff371;
+      }
+    }
+  }
+
+  .movies-container {
+    width: 95%;
+    margin: 2rem 0rem;
+    padding: 0rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+  }
+
+  .movie {
+    background-color: #312550;
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: all 150ms ease-in-out;
+
+    h3 {
+      margin: 0;
+      color: #ffee00;
     }
 
-    .movie {
-
-        background-color: #312550;
-        padding: 1rem;
-        border-radius: 1rem;
-        transition: all 150ms ease-in-out;
-
-        h3 {
-            margin: 0;
-            color: #ffee00;
-        }
-
-        img {
-            border-radius: 1rem;
-        }
-
-        &:hover {
-            transform: scale(1.1);
-            background-color: #463571;
-        }
+    img {
+      border-radius: 1rem;
     }
+
+    &:hover {
+      transform: scale(1.1);
+      background-color: #463571;
+    }
+  }
 }
 
+@media (max-width: 767px) {
+  .search {
+    flex-direction: column;
+  }
+}
